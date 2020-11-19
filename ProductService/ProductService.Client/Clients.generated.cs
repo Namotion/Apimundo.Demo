@@ -53,7 +53,7 @@ namespace ProductService.Client
         public async System.Threading.Tasks.Task<System.Collections.ObjectModel.ObservableCollection<Product>> FindProductsAsync(string? query, System.Threading.CancellationToken cancellationToken)
         {
             var urlBuilder_ = new System.Text.StringBuilder();
-            urlBuilder_.Append("api/products?");
+            urlBuilder_.Append("api/v2/products?");
             if (query != null) 
             {
                 urlBuilder_.Append(System.Uri.EscapeDataString("query") + "=").Append(System.Uri.EscapeDataString(ConvertToString(query, System.Globalization.CultureInfo.InvariantCulture))).Append("&");
@@ -128,7 +128,7 @@ namespace ProductService.Client
         public async System.Threading.Tasks.Task<Product> GetProductAsync(string? productId, System.Threading.CancellationToken cancellationToken)
         {
             var urlBuilder_ = new System.Text.StringBuilder();
-            urlBuilder_.Append("api/products/{productId}");
+            urlBuilder_.Append("api/v2/products/{productId}");
             urlBuilder_.Replace("{productId}", System.Uri.EscapeDataString(ConvertToString(productId, System.Globalization.CultureInfo.InvariantCulture)));
     
             var client_ = _httpClient;

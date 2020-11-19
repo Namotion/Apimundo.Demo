@@ -6,7 +6,9 @@ using ProductService.Models;
 namespace ProductService.Controllers
 {
     [ApiController]
-    [Route("api/products")]
+    [ApiVersion("1")]
+    [ApiVersion("2")]
+    [Route("api/v{version:apiVersion}/products")]
     public class ProductsController : ControllerBase
     {
         [HttpGet]
